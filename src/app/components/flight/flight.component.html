@@ -1,19 +1,20 @@
-<body background="https://images.search.yahoo.com/search/images;_ylt=Awr9Fq3.xyRimxUAcSVXNyoA;_ylu=Y29sbwNncTEEcG9zAzEEdnRpZANMT0NVSTAxOV8xBHNlYwNwaXZz?p=cloud+bg&fr2=piv-web&type=E210US91215G91642&fr=mcafee#id=28&iurl=http%3A%2F%2Fwww.jenniferpowter.com%2Fwp-content%2Fuploads%2F2018%2F06%2Fcloud-bg.jpg&action=click"></body>
 <div class="container">
-  <h1>Book a Flight PAYYA Airline</h1>
+  <h1>BOOK A FLIGTH PAYYA AIRLINE</h1>
   <form [formGroup]="flightForm">
-    <div class="form-group mt-3">
+    <div class="form-group mt-3" >
       <label>Full Name : </label>
       <input
         type="text"
         class="form-control"
         formControlName="fullName"
         placeholder="Enter your full-name"
+        style="border-color:rgb(93, 64, 146); "
       />
     </div>
     <div class="form-group mt-3">
+
       <label>From : </label>
-      <select class="custom-select mb-2" formControlName="from">
+      <select class="custom-select mb-2" formControlName="from" style="border-color:rgb(93, 64, 146); ">
         <option value="" selected>From</option>
         <option value="Thailand">Russia</option>
         <option value="Austria">Thailand</option>
@@ -25,8 +26,10 @@
       </select>
     </div>
     <div class="form-group mt-3">
+
       <label>To : </label>
-      <select class="custom-select mb-2" formControlName="to">
+
+      <select class="custom-select mb-2" formControlName="to" style="border-color:rgb(93, 64, 146); ">
         <option value="" selected>To</option>
         <option value="Thailand">Russia</option>
         <option value="Austria">Thailand</option>
@@ -37,6 +40,32 @@
         <option value="Korea">Korea</option>
       </select>
     </div>
+
+    <div>
+      <label>Trip Type</label>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          style="border-color:rgb(93, 64, 146); "
+          type="radio"
+          value="One-way"
+          formControlName="type"
+
+        />
+        <label class="form-check-label">One way</label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          style="border-color:rgb(93, 64, 146); "
+          type="radio"
+          value="Return"
+          formControlName="type"
+        />
+        <label class="form-check-label">Return</label>
+      </div>
+    </div>
+
     <div class="flex-date">
       <div>
         <label>Departure : </label> <br />
@@ -56,6 +85,9 @@
           <mat-datepicker #departurePicker disabled="false"></mat-datepicker>
         </mat-form-field>
       </div>
+
+
+
       <div>
         <label>Arrival : </label> <br />
         <mat-form-field appearance="fill">
@@ -75,30 +107,14 @@
         </mat-form-field>
       </div>
     </div>
-    <label>Trip Type</label>
-    <div class="form-check">
-      <input
-        class="form-check-input"
-        type="radio"
-        value="One-way"
-        formControlName="type"
-      />
-      <label class="form-check-label">One way</label>
-    </div>
-    <div class="form-check">
-      <input
-        class="form-check-input"
-        type="radio"
-        value="Return"
-        formControlName="type"
-      />
-      <label class="form-check-label">Return</label>
-    </div>
+
     <div class="form-group mt-3">
       <label>Adults</label>
+      <span style="color: red;" *ngIf="flightForm.get('adults')?.errors?.['required']">*required</span>
       <input
         type="number"
         class="form-control"
+        style="border-color:rgb(93, 64, 146); "
         formControlName="adults"
         placeholder="Enter a number"
         min="0"
@@ -107,6 +123,7 @@
       <input
         type="number"
         class="form-control"
+        style="border-color:rgb(93, 64, 146); "
         formControlName="children"
         placeholder="Enter a number"
         min="0"
@@ -114,23 +131,32 @@
       <label>Infants</label>
       <input
         type="number"
+        style="border-color:rgb(93, 64, 146); "
         class="form-control"
         formControlName="infants"
         placeholder="Enter a number"
         min="0"
       />
     </div>
+
     <button
       class="btn-lg btn-block btn-primary"
       type="submit"
-      style="background-color:rgb(230, 104, 255); border-color:rgb(63, 46, 95); color:rgb(255, 255, 255)"
+      style="background-color:rgb(165, 86, 180); border-color:rgb(103, 68, 104); color:rgb(255, 255, 255)"
       [disabled]="flightForm.invalid"
       (click)="onSubmit(flightForm.value)"
     >
       Submit
     </button>
-  </form>
-
+  </form><br>
+  <head>
+    <style>
+    bgcolor
+    table, th, td {
+      border: 3px solid rgb(255, 199, 255);
+    }
+    </style>
+    </head>
   <table class="table">
     <thead>
       <tr>
@@ -147,7 +173,7 @@
     </thead>
 
     <tbody>
-      <tr *ngFor="let f of flight">
+      <tr *ngFor="let f of flight" >
         <td>{{ f.fullName }}</td>
         <td>{{ f.from }}</td>
         <td>{{ f.to }}</td>
@@ -161,3 +187,4 @@
     </tbody>
   </table>
 </div>
+
