@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Book a Flight by payya</h1>
+  <h1>Book a Flight PAYYA Airline</h1>
   <form [formGroup]="flightForm">
     <div class="form-group mt-3">
       <label>Full Name : </label>
@@ -17,12 +17,20 @@
         <option value="Thailand">Russia</option>
         <option value="Austria">Thailand</option>
         <option value="England">England</option>
+        <option value=" Canada"> Canada</option>
+        <option value="Ukraine">Ukraine</option>
+        <option value="Japan">Japan</option>
+        <option value="Korea">Korea</option>
       </select>
     </div>
     <div class="form-group mt-3">
       <label>To : </label>
       <select class="custom-select mb-2" formControlName="to">
         <option value="" selected>To</option>
+        <option value="Thailand">Russia</option>
+        <option value="Austria">Thailand</option>
+        <option value="England">England</option>
+        <option value=" Canada"> Canada</option>
         <option value="Ukraine">Ukraine</option>
         <option value="Japan">Japan</option>
         <option value="Korea">Korea</option>
@@ -114,6 +122,7 @@
     <button
       class="btn-lg btn-block btn-primary"
       type="submit"
+      style="background-color:rgb(230, 104, 255); border-color:rgb(63, 46, 95); color:rgb(255, 255, 255)"
       [disabled]="flightForm.invalid"
       (click)="onSubmit(flightForm.value)"
     >
